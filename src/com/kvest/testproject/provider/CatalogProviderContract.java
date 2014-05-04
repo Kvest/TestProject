@@ -2,6 +2,7 @@ package com.kvest.testproject.provider;
 
 import android.net.Uri;
 import android.provider.BaseColumns;
+import com.kvest.testproject.utils.Constants;
 
 /**
  * Created with IntelliJ IDEA.
@@ -31,7 +32,7 @@ public class CatalogProviderContract {
                     _ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                     TITLE_COLUMN + " TEXT, " +
                     ITEM_TYPE_COLUMN + " INTEGER, " +
-                    PARENT_CATALOG_COLUMN + " INTEGER DEFAULT -1);";
+                    PARENT_CATALOG_COLUMN + " INTEGER DEFAULT " + Constants.ROOT_CATALOG_ID + ");";
 
             public static final String DROP_TABLE_SQL = "DROP TABLE IF EXISTS " + TABLE_NAME + ";";
         }
