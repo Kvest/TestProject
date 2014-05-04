@@ -1,4 +1,4 @@
-package com.kvest.testproject;
+package com.kvest.testproject.provider;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;

@@ -9,7 +9,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteQueryBuilder;
 import android.net.Uri;
 import android.text.TextUtils;
-import com.kvest.testproject.CatalogSQLiteHelper;
 
 /**
  * Created with IntelliJ IDEA.
@@ -149,16 +148,16 @@ public class CatalogProvider extends ContentProvider {
                 break;
             case CATALOG_URI_INDICATOR :
                 rowsUpdated = db.update(CatalogProviderContract.Tables.CatalogItems.TABLE_NAME, values,
-                                        CatalogProviderContract.Tables.CatalogItems._ID + "=" + uri.getLastPathSegment() +
-                                        (hasSelection ? (" AND " + selection) : ""), (hasSelection ? selectionArgs : null));
+                        CatalogProviderContract.Tables.CatalogItems._ID + "=" + uri.getLastPathSegment() +
+                                (hasSelection ? (" AND " + selection) : ""), (hasSelection ? selectionArgs : null));
                 break;
             case ITEMS_URI_INDICATOR :
                 rowsUpdated = db.update(CatalogProviderContract.Tables.Items.TABLE_NAME, values, selection, selectionArgs);
                 break;
             case ITEM_URI_INDICATOR :
                 rowsUpdated = db.update(CatalogProviderContract.Tables.Items.TABLE_NAME, values,
-                                        CatalogProviderContract.Tables.Items._ID + "=" + uri.getLastPathSegment() +
-                                        (hasSelection ? (" AND " + selection) : ""), (hasSelection ? selectionArgs : null));
+                        CatalogProviderContract.Tables.Items._ID + "=" + uri.getLastPathSegment() +
+                                (hasSelection ? (" AND " + selection) : ""), (hasSelection ? selectionArgs : null));
                 break;
             default:
                 throw new IllegalArgumentException("Unknown uri = " + uri);
